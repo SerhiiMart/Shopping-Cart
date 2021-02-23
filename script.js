@@ -21,4 +21,5 @@ let updateCartTotal = () => {
     let quantity = quantityElem.value;
     total += price*quantity;
   }
+  document.getElementsByClassName('cart-total-price')[0].innerText = total;
 }
