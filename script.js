@@ -12,8 +12,13 @@ button.addEventListener('click', (e)=>{
 let updateCartTotal = () => {
   let cartItemContainer = document.getElementsByClassName('cart-items')[0];
   let cartRows = cartItemContainer.getElementsByClassName('cart-row')
+  var total = 0;
   for ( let i =0; i< cartRows.length; i++){
     let cartRow = cartRows[i];  
     let priceElem = cartRow.getElementsByClassName('cart-price')[0];
+    let quantityElem = cartRow.getElementsByClassName('cart-quantity-input')[0];
+    let price = parseFloat(priceElem.innerText.replace('$', ''));
+    let quantity = quantityElem.value;
+    total += price*quantity;
   }
 }
