@@ -5,11 +5,11 @@ let button = removeCartItemsButt[i];
 button.addEventListener('click', (e)=>{
   let buttonClicked = e.target;
   buttonClicked.parentElement.parentElement.remove();
-  updateCardTotal();
+  updateCartTotal();
 })
 }
 
-let updateCardTotal = () => {
+let updateCartTotal = () => {
   let cartItemContainer = document.getElementsByClassName('cart-items')[0];
   let cartRows = cartItemContainer.getElementsByClassName('cart-row')
   for ( let i =0; i< cartRows.length; i++){
