@@ -1,5 +1,8 @@
-let removeCartItemsButt = document.getElementsByClassName('btn-danger');
+if (document.readyState == 'loading'){
+  document.addEventListener('DOMContentLoaded', ready);
+}
 
+let removeCartItemsButt = document.getElementsByClassName('btn-danger');
 for ( let i =0; i< removeCartItemsButt.length; i++){
 let button = removeCartItemsButt[i];
 button.addEventListener('click', (e)=>{
@@ -21,5 +24,5 @@ let updateCartTotal = () => {
     let quantity = quantityElem.value;
     total += price*quantity;
   }
-  document.getElementsByClassName('cart-total-price')[0].innerText = total;
+  document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total;
 }
